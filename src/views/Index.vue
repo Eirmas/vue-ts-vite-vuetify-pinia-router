@@ -32,13 +32,32 @@
           </a>
         </v-row>
       </v-col>
+
+      <v-col class="mb-5" cols="12">
+        <v-row justify="center" class="flex items-center">
+          <v-sheet class="d-flex justify-center mr-4 min-40" rounded>
+            <code class="align-self-center">{{ counterStore.counter }}</code>
+          </v-sheet>
+        <v-btn @click="counterStore.increment" :ripple="false">Increment</v-btn>
+        </v-row>
+      </v-col>
     </v-row>
   </v-container>
 </template>
 
+<style>
+.min-40 {
+  min-width: 40px;
+}
+</style>
+
 <script setup lang='ts'>
 import { ref } from 'vue'
+import { useTheme } from 'vuetify'
 import logo from '../assets/logo.svg'
+import { useCounterStore } from '../store/counter'
+
+const counterStore = useCounterStore()
 
 const ecosystem = ref([
   {
