@@ -1,0 +1,5 @@
+$font: 'Plus Jakarta Sans', 'Inter', 'Sans serif';
+
+@use 'vuetify/styles' with (
+  $body-font-family: $font
+)
